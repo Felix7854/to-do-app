@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet"  href="styles.css">
   
   <title>Frontend Mentor | Todo app</title>
 
@@ -16,27 +17,50 @@
 </head>
 <body>
 
+  <main>
+    <div>
+      <h1>Todo</h1>
+      <img href="./images/icon-moon.svg" alt="MOON ICON">
+    </div>
+    
+    <div>
+      <input type="radio" id="create-todo"> <label for="create-todo"> Create a new todo...</label>
+    </div>
+
+    <div class="todo-list">
+      <div>
+        <input type="radio" id="first-todo"> <label for="first-todo"> Complete online Java on Frontend Mentor</label>
+      </div>
+      <div>
+        <input type="radio" id="first-todo"> <label for="first-todo"> Jog around the park 3times</label>
+      </div>
+      <div>
+        <input type="radio" id="second-todo"> <label for="second-todo"> 10 minutes meditation</label>
+      </div>
+      <div>
+        <input type="radio" id="third-todo"> <label for="third-todo"> Read for 1 hour</label>
+      </div>
+      <div>
+        <input type="radio" id="fourth-todo"> <label for="fourth-todo"> Pick up progress</label>
+      </div>
+      <div>
+        <input type="radio" id="fifth-todo"> <label for="fifth-todo"> Complete Todo App on Frontend Mentor</label>
+      </div>
+      <div>
+        <input type="radio" id="sixth-todo"> <label for="sixth-todo"> Create a new todo...</label>
+      </div>
+      <div>
+        <p>5 items left
+          <span>All</span>
+          <span>Active</span>
+          <span>Completed</span>
+          Clear Completed
+        </p>
+      </div>
+    </div>
+    <p>Drag and drop to reorder list</p>
+  </main>
   <!-- header -->
-  <div>
-    <h1>Todo</h1>
-    <img href="./images/icon-sun.svg" alt="SUN ICON">
-  </div>
   
-  
-
-  <!-- Add dynamic number --> items left
-
-  All
-  Active 
-  Completed
-
-  Clear Completed
-
-  Drag and drop to reorder list
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
 </html>
