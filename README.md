@@ -1,2 +1,3 @@
-Learning how to add javaScript to HTML and CSS to enable the web to interative
-Adding javaScript enabales the app to collect data.
+This app is to enable the user to create a list of things that needs to be completed in the course of the day.
+
+To make it interactiv, javaScript needs to be incorporated in the code.
