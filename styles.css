@@ -40,6 +40,7 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .title {
@@ -49,6 +50,38 @@ body {
     color: white;
 }
 
-.new-todo-list {
+.new-to-do {
     background-color: yellow;
+    height: 70px;
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+}
+
+.check {
+    background-color: red;
+    width: 70px;
+}
+
+.new-todo-input {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.new-todo-input form {
+    flex-grow: 1;
+}
+
+.new-todo-input input {
+    width: 100%;
+    padding: 10px 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
 }
