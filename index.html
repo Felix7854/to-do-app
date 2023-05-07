@@ -37,7 +37,7 @@
         </div>
           <div class="new-todo-input">
             <form id="new-task-form">
-              <input type="text" placeholder="Create a todo..." id="new-input">
+              <input type="text" placeholder="Create a todo..." id="new-input" autocomplete="off">
             </form>
           </div>
       </div>
@@ -49,7 +49,10 @@
        
         <div class="info">
           <div class="info-left">
-            5 items left
+            <span id="itemLeft">
+              
+            </span>
+            items left
           </div>
           <div class="info-middle">
             <span class="active">All</span>
