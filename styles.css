@@ -92,11 +92,11 @@ body {
     align-items: center;
 }
 
-.new-todo-input form {
+.new-todo-input #new-task-form {
     flex-grow: 1;
 }
 
-.new-todo-input input {
+.new-todo-input #new-input {
     width: 100%;
     padding: 10px 0;
     background-color: transparent;
@@ -107,7 +107,7 @@ body {
     font-size: 18px;
 }
 
-.new-todo-input input::placeholder {
+.new-todo-input #new-input::placeholder {
     color: #494C6B;
 }
 

@@ -8,7 +8,8 @@
   <link rel="stylesheet"  href="styles.css">
   
   <title>Frontend Mentor | Todo app</title>
-
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <!-- <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -35,44 +36,17 @@
           <div class="check-mark"></div>
         </div>
           <div class="new-todo-input">
-            <form>
-              <input type="text" placeholder="Create a todo...">
+            <form id="new-task-form">
+              <input type="text" placeholder="Create a todo..." id="new-input">
             </form>
           </div>
       </div>
       <div class="todo-items-container">
-        <div class="todo-items">
-          <div class="todo-item">
-            <div class="check">
-              <div class="check-mark">
-                <img src="./images/icon-check.svg" alt="check-icon">
-              </div>
-            </div>
-            <div class="todo-texts">
-              Cook some rice
-            </div>
-          </div>
-          <div class="todo-item">
-            <div class="check">
-              <div class="check-mark">
-                <img src="./images/icon-check.svg" alt="check-icon">
-              </div>
-            </div>
-            <div class="todo-texts">
-              Cook some rice
-            </div>
-          </div>
-          <div class="todo-item">
-            <div class="check">
-              <div class="check-mark">
-                <img src="./images/icon-check.svg" alt="check-icon">
-              </div>
-            </div>
-            <div class="todo-texts">
-              Cook some rice
-            </div>
-          </div>
+        <div id="todo-items">
+          
+         
         </div>
+       
         <div class="info">
           <div class="info-left">
             5 items left
@@ -86,7 +60,6 @@
             <span>Clear Completed</span>
           </div>
         </div>
-      </div>
     </div>
 </div>
 </body>
