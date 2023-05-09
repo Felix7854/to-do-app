@@ -195,3 +195,11 @@ body {
     display: none;
 }
 
+.completed{
+    background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
+
+}
+
+.strike-through{
+    text-decoration: line-through;
+}
