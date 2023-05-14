@@ -90,6 +90,7 @@ body {
     flex-grow: 1;
     display: flex;
     align-items: center;
+    
 }
 
 .new-todo-input #new-task-form {
@@ -105,6 +106,7 @@ body {
     font-family: 'Josefin Sans';
     font-weight: 400;
     font-size: 18px;
+    color: #FFFFFF;
 }
 
 .new-todo-input #new-input::placeholder {
@@ -203,3 +205,84 @@ body {
 .strike-through{
     text-decoration: line-through;
 }
+
+/* For mobile view */
+@media screen and (max-width: 480px) {
+    .header{
+        width: 325px;
+        height: 20px;
+        left: 26px;
+        top: 48px
+    }
+    .title {
+        width: 108.14px;
+        height: 20px;
+        font-size: 29px;
+    }
+
+    .container {
+        width: 327px;
+        height: 368px;
+    }
+
+    .info {
+        display: flex;
+        justify-content: center;
+    }
+
+    .info-left{
+        position: absolute;
+        left: 46px;
+    }
+
+    .info-right {
+        position: absolute;
+        right: 46px;
+    }
+
+    .hideInfo-1 {
+        display: none;
+    }
+    
+    .hideInfo-2 {
+        display: none;
+    }
+
+    div > span {
+        font-size: 14px;
+        line-height: 14px;
+        letter-spacing: -0.194444px;
+        color: #5B5E7E;
+    }
+
+    .todo-texts {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: -0.166667px;
+        color: #C8CBE7;
+    }
+
+    .todo-item, .new-to-do, .info{
+        width: 327px;
+        height: 48px;
+    }
+
+    .new-todo-input #new-input {
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: -0.166667px
+    }
+
+    .check-mark{
+        width: 20px;
+        height: 20px;
+    }
+  }
+
+  @media screen and (min-width: 481px) {
+    .hideAllInfo {
+        display: none;
+    }
+  }
+
