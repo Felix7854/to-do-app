@@ -203,7 +203,8 @@ body {
 }
 
 .strike-through{
-    text-decoration: line-through;
+    text-decoration-line: line-through;
+    color: #4D5067;
 }
 
 /* For mobile view */

@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  let oldData = [];
+  let showOldData = false;
     let  todoList = [
       { id:1,
         description:'Cook Well',
@@ -49,15 +51,44 @@ $(document).ready(function(){
       event.preventDefault();
     })
 
-    $('').on('click','.remove-item', function(event) {
-      let id = $(this).attr('id');
-      todoList.splice(id, 1);
-      setHtml();
-    })
+      $('.remove-item').on('click', function() {
+        setHtml();
+      });
+
+      $('.btnCompleted').on('click',function(){
+         showOldData = true;
+          oldData = todoList.filter(obj => {
+            return obj.selected === true;
+          });
+          setHtml();
+      })
+
+      $('.btnActive').on('click',function(){
+        showOldData = true;
+         oldData = todoList.filter(obj => {
+           return obj.selected === false;
+         });
+         setHtml();
+     })
+
+      $('.btnAll').on('click',function(){
+        showOldData = false;
+         setHtml();
+     })
+
+      $('.btnClearCompleted').on('click',function(){
+        showOldData = false;
+        todoList = todoList.filter(obj => {
+          return obj.selected === false;
+        });
+        setHtml();
+     })
 
     function setHtml(){
+      let results = [];
+      if(showOldData) {results = oldData}else{results = todoList};
         let text = '';
-        todoList.forEach((val,index)=>{
+        results.forEach((val,index)=>{
           let determiner = '';
           let strike = '';
           if(val.selected === true) {
