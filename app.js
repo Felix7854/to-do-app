@@ -49,10 +49,14 @@ $(document).ready(function(){
     $('body').on('mouseleave','.todo-item',function(event) {
       $('.remove-item').css('display','none');
       event.preventDefault();
-    })
+    });
 
-      $('.remove-item').on('click', function() {
-        setHtml();
+      $('body').on('click', '.remove-item', function() {
+        todoList.forEach((item, index) => {
+          if(item.selected) {
+            todoList.splice(index, 1);
+          }
+        });
       });
 
       $('.btnCompleted').on('click',function(){
@@ -61,15 +65,19 @@ $(document).ready(function(){
             return obj.selected === true;
           });
           setHtml();
-      })
+      });
 
       $('.btnActive').on('click',function(){
-        showOldData = true;
-         oldData = todoList.filter(obj => {
-           return obj.selected === false;
-         });
-         setHtml();
-     })
+        $('body').toggleClass('dark-mode light-mode');
+        let logoSrc = $('#switch').attr('src');
+        if (logoSrc === 'images/icon-moon.svg') {
+            $('#switch').attr('src', 'images/icon-sun.svg');
+            $('.btnActive').css('color', '#E3E4F1');
+        } else {
+          $('#switch').attr('src', 'images/icon-moon.svg');
+          $('.btnActive').css('color', '#494C6B');
+        }
+     });
 
       $('.btnAll').on('click',function(){
         showOldData = false;

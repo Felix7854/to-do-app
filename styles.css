@@ -14,6 +14,17 @@ body {
     background-color: #171823;
 }
 
+body.light-mode {
+    background-color: #ffffff !important;
+    /* color: #000000; */
+  }
+  
+  body.dark-mode {
+    background-color: #171823;
+    /* color: #ffffff; */
+  }
+
+
 .bg {
     position: absolute;
     top: 0;
@@ -206,6 +217,7 @@ body {
     text-decoration-line: line-through;
     color: #4D5067;
 }
+
 
 /* For mobile view */
 @media screen and (max-width: 480px) {
