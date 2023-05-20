@@ -87,6 +87,7 @@ body.light-mode {
     width: 24px;
     border: 1px solid #393A4B;
     border-radius: 50%;
+    mix-blend-mode: normal;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -95,6 +96,7 @@ body.light-mode {
 
 .check-mark:hover {
     background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
+    /* border-color: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%); */
 }
 
 .new-todo-input {
@@ -290,6 +292,7 @@ body.light-mode {
     .check-mark{
         width: 20px;
         height: 20px;
+        background-color: red;
     }
   }
 

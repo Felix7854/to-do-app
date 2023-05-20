@@ -52,11 +52,33 @@ $(document).ready(function(){
     });
 
       $('body').on('click', '.remove-item', function() {
-        todoList.forEach((item, index) => {
-          if(item.selected) {
-            todoList.splice(index, 1);
+        let checkMarkId = $(this).attr('id');
+        let getId = parseInt(checkMarkId);
+        const getItemIndex = todoList.findIndex(val => val.id === getId);
+
+        if (getItemIndex !== -1) {
+          todoList.splice(getItemIndex, 1);
+          setHtml();
+        }
+      });
+
+      $('body').on('click', '.switch', function() {
+        $('body').toggleClass('dark-mode light-mode');
+          let logoSrc = $('#switch').attr('src');
+          if (logoSrc ==='images/icon-moon.svg') {
+            $('#switch').attr('src', 'images/icon-sun.svg');
+            // $('.btnActive').css('color', '#E3E4F1');
+            $('.new-to-do').css('background-color', '#25273D');
+            $('.todo-items-container').css('background-color', '#25273D');
+            $('.todo-texts').css('color', '#E3E4F1');
+          } else {
+            $('#switch').attr('src', 'images/icon-moon.svg');
+            // $('.btnActive').css('color', '#494C6B');
+            $('.new-to-do').css('background-color', '#E3E4F1');
+            $('.todo-items-container').css('background-color', '#E3E4F1');
+            $('.todo-texts').css('color', '#494C6B');
           }
-        });
+
       });
 
       $('.btnCompleted').on('click',function(){
@@ -68,15 +90,11 @@ $(document).ready(function(){
       });
 
       $('.btnActive').on('click',function(){
-        $('body').toggleClass('dark-mode light-mode');
-        let logoSrc = $('#switch').attr('src');
-        if (logoSrc === 'images/icon-moon.svg') {
-            $('#switch').attr('src', 'images/icon-sun.svg');
-            $('.btnActive').css('color', '#E3E4F1');
-        } else {
-          $('#switch').attr('src', 'images/icon-moon.svg');
-          $('.btnActive').css('color', '#494C6B');
-        }
+        showOldData = true;
+          oldData = todoList.filter(obj => {
+            return obj.selected === false;
+          });
+          setHtml();
      });
 
       $('.btnAll').on('click',function(){
