@@ -43,8 +43,10 @@ $(document).ready(function(){
      let getId = parseInt(checkMarkId.split('-')[2]);
      const getItemIndex = todoList.findIndex(val => val.id === getId);
      todoList[getItemIndex].selected = !todoList[getItemIndex].selected;
+      debugger;
+
      setHtml();
-    })
+    });
    
     $('body').on('mouseleave','.todo-item',function(event) {
       $('.remove-item').css('display','none');

@@ -215,6 +215,14 @@ body.light-mode {
 
 }
 
+.check-mark > img {
+    display: none;
+}
+
+/* .completed > img {
+    display: none;
+} */
+
 .strike-through{
     text-decoration-line: line-through;
     color: #4D5067;
