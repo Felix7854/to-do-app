@@ -43,7 +43,7 @@ $(document).ready(function(){
      let getId = parseInt(checkMarkId.split('-')[2]);
      const getItemIndex = todoList.findIndex(val => val.id === getId);
      todoList[getItemIndex].selected = !todoList[getItemIndex].selected;
-      debugger;
+      // debugger;
 
      setHtml();
     });
@@ -69,18 +69,26 @@ $(document).ready(function(){
           let logoSrc = $('#switch').attr('src');
           if (logoSrc ==='images/icon-moon.svg') {
             $('#switch').attr('src', 'images/icon-sun.svg');
-            // $('.btnActive').css('color', '#E3E4F1');
+            $('.btnActive').css('color', '#E3E4F1');
+            $('.btnCompleted').css('color', '#E3E4F1');
+            $('.btnClearCompleted').css('color', '#E3E4F1');
             $('.new-to-do').css('background-color', '#25273D');
             $('.todo-items-container').css('background-color', '#25273D');
-            $('.todo-texts').css('color', '#E3E4F1');
+            $('.new-todo-input #new-input').css('color', '#E3E4F1');
+            $('.todo-texts').css('color', '#494C6B');
+
           } else {
             $('#switch').attr('src', 'images/icon-moon.svg');
-            // $('.btnActive').css('color', '#494C6B');
+            $('.btnActive').css('color', '#494C6B');
+            $('.btnCompleted').css('color', '#494C6B');
+            $('.btnClearCompleted').css('color', '#494C6B');
             $('.new-to-do').css('background-color', '#E3E4F1');
             $('.todo-items-container').css('background-color', '#E3E4F1');
-            $('.todo-texts').css('color', '#494C6B');
+            $('.new-todo-input #new-input').css('color', '#494C6B');
+            $('.todo-texts').css('color', '#E3E4F1');
           }
 
+          setHtml();
       });
 
       $('.btnCompleted').on('click',function(){
@@ -119,15 +127,17 @@ $(document).ready(function(){
         results.forEach((val,index)=>{
           let determiner = '';
           let strike = '';
+          let checkMark = '';
           if(val.selected === true) {
             determiner = 'completed';
             strike = 'strike-through';
+            checkMark = 'showCheck';
           };
             text += `
             <div class="todo-item" id="todo-item-${val.id}">
               <div class="check">
                 <div class="check-mark ${determiner}" id="check-mark-${val.id}">
-                  <img src="./images/icon-check.svg" alt="check-icon">
+                  <img src="./images/icon-check.svg" alt="check-icon" class="${checkMark}">
                 </div>
               </div>
               <div class="todo-texts ${strike}">
@@ -138,9 +148,9 @@ $(document).ready(function(){
         });
         // debugger;
 
-        console.log(todoList);
+        const itemsCompleted = todoList.filter(item => item.selected === false);
 
-        $('#itemLeft').html(todoList.length);
+        $('#itemLeft').html(itemsCompleted.length);
     
         $('#todo-items').html(text);
     
