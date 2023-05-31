@@ -6,23 +6,40 @@
     box-sizing: border-box;
 }
 
+:root {
+    --header: #FFFFFF;
+    --placeHolderColor: #767992;
+    --selectedItem: #4D5067;
+    --primaryText-color: #C8CBE7;
+    --secondary-color: #5B5E7E;
+    --infoText-color: #5B5E7E;
+    --background-color: #171823;
+    --primaryBackgroundColor: #25273D;
+    --activeColor: #3A7CFD;
+    --hover-color: #E3E4F1;
+    --btnBorder-color: #393A4B;
+}
+
+.light-mode {
+    --placeHolderColor: #393A4B;
+    --selectedItem: #D1D2DA;
+    --primaryText-color: #494C6B;
+    --secondary-color: #E3E4F1;
+    --primaryBackgroundColor: #E3E4F1;
+    --infoText-color: #9495A5;
+    --background-color: #F2F2F2;
+    --activeColor: #3A7CFD;
+    --hover-color: #494C6B;
+    --btnBorder-color: #494C6B;
+}
+
 body {
     display: flex;
     justify-content: center;
     font-family: 'Josefin Sans' sans-serif;
     Font-size: 18px;
-    background-color: #171823;
+    background-color: var(--background-color);
 }
-
-body.light-mode {
-    background-color: #ffffff !important;
-    /* color: #000000; */
-  }
-  
-  body.dark-mode {
-    background-color: #171823;
-    /* color: #ffffff; */
-  }
 
 
 .bg {
@@ -62,12 +79,12 @@ body.light-mode {
     font-size: 40px;
     line-height: 40px;
     letter-spacing: 15px;
-    color: #FFFFFF;
+    color: var(--header);
     text-transform: uppercase;
 }
 
 .new-to-do {
-    background-color: #25273D;
+    background-color: var(--primaryBackgroundColor);
     height: 64px;
     width: 100%;
     margin-top: 50px;
@@ -85,7 +102,7 @@ body.light-mode {
 .check-mark {
     height: 24px;
     width: 24px;
-    border: 1px solid #393A4B;
+    border: 1px solid var(--btnBorder-color);
     border-radius: 50%;
     mix-blend-mode: normal;
     cursor: pointer;
@@ -94,9 +111,18 @@ body.light-mode {
     justify-content: center;
 }
 
-.check-mark:hover {
+.new-to-do > .check > .check-mark:hover {
     background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
-    /* border-color: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%); */
+}
+
+.new-to-do > .check > .check-mark {
+    border: 1px solid var(--btnBorder-color);
+}
+
+.check-mark:hover {
+    background: 
+            linear-gradient(#25273D, #25273D) padding-box,
+            linear-gradient(135deg, #55DDFF 0%, #C058F3 100%) border-box;
 }
 
 .new-todo-input {
@@ -119,16 +145,16 @@ body.light-mode {
     font-family: 'Josefin Sans';
     font-weight: 400;
     font-size: 18px;
-    color: #FFFFFF;
+    color: var(--primaryText-color);
 }
 
 .new-todo-input #new-input::placeholder {
-    color: #494C6B;
+    color: var(--placeHolderColor);
 }
 
 .todo-items-container {
     margin-top: 24px;
-    background-color: #25273D;
+    background-color: var(--primaryBackgroundColor);
     box-shadow: 0px 2px 30px 0px rgba(0,0,0,0.4);
     border-radius: 6px;
     overflow: hidden;
@@ -151,7 +177,7 @@ body.light-mode {
 .todo-texts {
     display: flex;
     align-items: center;
-    color: #C8CBE7;
+    color: var(--primaryText-color);
     font-family: 'Josefin Sans';
     font-weight: 400;
     font-size: 18px;
@@ -165,7 +191,7 @@ body.light-mode {
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;
-    color: #5B5E7E;
+    color: var(--infoText-color);
 }
 
 .info-left, .info-middle > span, .info-right {
@@ -186,14 +212,14 @@ body.light-mode {
 }
 
 .info-middle span:hover {
-    color: #E3E4F1;
+    color: var(--hover-color);
 }
 .info-middle span:active {
-    color: hsl(220, 98%, 61%);
+    color: var(--activeColor);
 }
 
 .info-middle span.active {
-    color: hsl(220, 98%, 61%);
+    color: var(--activeColor);
 }
 
 .info-right {
@@ -201,11 +227,11 @@ body.light-mode {
     text-align: end;
 }
 .info-right:hover {
-    color: #E3E4F1;
+    color: var(--hover-color);
 }
 
 .info-right:active {
-    color: hsl(220, 98%, 61%) !important;  
+    color: var(--activeColor) !important;  
   }
 
 .remove-item {
@@ -230,7 +256,7 @@ body.light-mode {
 
 .strike-through{
     text-decoration-line: line-through;
-    color: #4D5067;
+    color: var(--selectedItem);
 }
 
 
@@ -280,7 +306,7 @@ body.light-mode {
         font-size: 14px;
         line-height: 14px;
         letter-spacing: -0.194444px;
-        color: #5B5E7E;
+        color: var(--infoText-color);
     }
 
     .todo-texts {
@@ -288,7 +314,7 @@ body.light-mode {
         font-size: 12px;
         line-height: 12px;
         letter-spacing: -0.166667px;
-        color: #C8CBE7;
+        color: var(--primaryText-color);
     }
 
     .todo-item, .new-to-do, .info{

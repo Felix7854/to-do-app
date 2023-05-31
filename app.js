@@ -44,7 +44,7 @@ $(document).ready(function(){
      const getItemIndex = todoList.findIndex(val => val.id === getId);
      todoList[getItemIndex].selected = !todoList[getItemIndex].selected;
       // debugger;
-
+      event.preventDefault();
      setHtml();
     });
    
@@ -65,29 +65,14 @@ $(document).ready(function(){
       });
 
       $('body').on('click', '.switch', function() {
-        $('body').toggleClass('dark-mode light-mode');
+        $('body').toggleClass('light-mode');
           let logoSrc = $('#switch').attr('src');
-          if (logoSrc ==='images/icon-moon.svg') {
-            $('#switch').attr('src', 'images/icon-sun.svg');
-            $('.btnActive').css('color', '#E3E4F1');
-            $('.btnCompleted').css('color', '#E3E4F1');
-            $('.btnClearCompleted').css('color', '#E3E4F1');
-            $('.new-to-do').css('background-color', '#25273D');
-            $('.todo-items-container').css('background-color', '#25273D');
-            $('.new-todo-input #new-input').css('color', '#E3E4F1');
-            $('.todo-texts').css('color', '#494C6B');
-
-          } else {
-            $('#switch').attr('src', 'images/icon-moon.svg');
-            $('.btnActive').css('color', '#494C6B');
-            $('.btnCompleted').css('color', '#494C6B');
-            $('.btnClearCompleted').css('color', '#494C6B');
-            $('.new-to-do').css('background-color', '#E3E4F1');
-            $('.todo-items-container').css('background-color', '#E3E4F1');
-            $('.new-todo-input #new-input').css('color', '#494C6B');
-            $('.todo-texts').css('color', '#E3E4F1');
+          if(logoSrc === './images/icon-sun.svg') {
+            $('#switch').attr('src', './images/icon-moon.svg'); 
+          }else {
+            $('#switch').attr('src', './images/icon-sun.svg'); 
           }
-
+          
           setHtml();
       });
 
