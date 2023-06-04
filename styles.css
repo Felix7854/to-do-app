@@ -18,6 +18,7 @@
     --activeColor: #3A7CFD;
     --hover-color: #E3E4F1;
     --btnBorder-color: #393A4B;
+    --background: linear-gradient(#25273D, #25273D) padding-box;
 }
 
 .light-mode {
@@ -31,6 +32,7 @@
     --activeColor: #3A7CFD;
     --hover-color: #494C6B;
     --btnBorder-color: #494C6B;
+    --background: linear-gradient(#E3E4F1, #E3E4F1) padding-box;
 }
 
 body {
@@ -112,7 +114,7 @@ body {
 }
 
 .new-to-do > .check > .check-mark:hover {
-    background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
+    background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%) !important;
 }
 
 .new-to-do > .check > .check-mark {
@@ -120,9 +122,16 @@ body {
 }
 
 .check-mark:hover {
+    border: 1px solid transparent !important;
     background: 
-            linear-gradient(#25273D, #25273D) padding-box,
-            linear-gradient(135deg, #55DDFF 0%, #C058F3 100%) border-box;
+            var(--background),
+            linear-gradient(135deg, #55DDFF 0%, #C058F3 100%) border-box !important;
+}
+
+.check-mark.completed:hover {
+    border: 1px solid var(--btnBorder-color) !important;
+    background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%) !important;
+    
 }
 
 .new-todo-input {
@@ -192,6 +201,14 @@ body {
     align-items: center;
     padding: 0 30px;
     color: var(--infoText-color);
+}
+
+.info-left {
+    width: 100px;
+}
+
+#itemLeft {
+    width: 40px !important;
 }
 
 .info-left, .info-middle > span, .info-right {
