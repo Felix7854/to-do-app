@@ -24,7 +24,7 @@ $(document).ready(function(){
               selected:false,
               completed:false,
             };
-            todoList.push(newObject);
+            todoList.unshift(newObject);
             setHtml();
             clearInput();
             event.preventDefault();
@@ -144,5 +144,5 @@ $(document).ready(function(){
     function clearInput(){
       $('#new-input').val('');
     }
-})
+});
 
