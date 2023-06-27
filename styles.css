@@ -235,9 +235,9 @@ body {
     color: var(--activeColor);
 }
 
-.info-middle span.active {
+/* .info-middle span.active {
     color: var(--activeColor);
-}
+} */
 
 .info-right {
     cursor: pointer;
@@ -274,6 +274,14 @@ body {
 .strike-through{
     text-decoration-line: line-through;
     color: var(--selectedItem);
+}
+
+.btn-color {
+    color:  #3A7CFD !important;
+}
+
+.btn-color1{
+    color: white;
 }
 
 

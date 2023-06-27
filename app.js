@@ -77,6 +77,10 @@ $(document).ready(function(){
       });
 
       $('.btnCompleted').on('click',function(){
+        $('.btnCompleted').addClass('btn-color');
+        $('.btnActive').removeClass('btn-color');
+        $('.btnClearCompleted').removeClass('btn-color');
+        $('.btnAll').removeClass('btn-color');
          showOldData = true;
           oldData = todoList.filter(obj => {
             return obj.selected === true;
@@ -85,6 +89,10 @@ $(document).ready(function(){
       });
 
       $('.btnActive').on('click',function(){
+        $('.btnActive').addClass('btn-color');
+        $('.btnCompleted').removeClass('btn-color');
+        $('.btnClearCompleted').removeClass('btn-color');
+        $('.btnAll').removeClass('btn-color');
         showOldData = true;
           oldData = todoList.filter(obj => {
             return obj.selected === false;
@@ -93,11 +101,19 @@ $(document).ready(function(){
      });
 
       $('.btnAll').on('click',function(){
+        $('.btnAll').addClass('btn-color');
+        $('.btnActive').removeClass('btn-color');
+        $('.btnCompleted').removeClass('btn-color');
+        $('.btnClearCompleted').removeClass('btn-color');
         showOldData = false;
          setHtml();
      })
 
       $('.btnClearCompleted').on('click',function(){
+        $('.btnClearCompleted').addClass('btn-color');
+        $('.btnActive').removeClass('btn-color');
+        $('.btnCompleted').removeClass('btn-color');
+        $('.btnAll').removeClass('btn-color');
         showOldData = false;
         todoList = todoList.filter(obj => {
           return obj.selected === false;
